@@ -1,22 +1,9 @@
 # Speech Enhancement: 2024-DCCTN-Deep-Complex-Convolution-Transformer-with-Frequency-Transformation
 
-
-# Implementation of three networks (CFTNet, DCCTN, and DATCFTNet) for speech enhancement.
-# ******************* Network-1: CFTNet ******************
- Complex-valued Frequency Transformation Network for Speech Enhancement
- Authors: Nursadul Mamun, John H.L. Hansen “CFTNet: Complex-valued frequency transformation
- network for speech enhancement, INTERSPEECH, Dublin, Ireland, 2023.
-
 # ******************* Network-2: DCCTN *******************
 Deep Complex Convolution Transformer Network for Speech Enhancement
 Authors: Nursadul Mamun, John H.L. Hansen “Speech Enhancement for Cochlear Implant using Deep Complex
 Convolution Transformer with Frequency Transformation, IEEE Transaction on Audio, Speech, and Language Processing, 2024.
-
-
-# ******************* Network-2: DATCFTNet ***************
- DAT-CFTNet: A Dual-Path Attention-based Complex-valued Frequency Transformation Network for Speech Enhancement
- Authors: Nursadul Mamun, John H.L. Hansen “DAT-CFTNet: A Dual-Path Attention-based Complex-valued Frequency
- Transformation Network for Speech Enhancement, ICASSP, Korea, 2024.
 #-----------------------------------------------------------
 
 # Architecture
@@ -75,8 +62,8 @@ Step 3: Execute `Dataprep.py` to segment audio files and create the `Database > 
 Step 4: To train the model run this function in the Python terminal:-
 
 			python3 train.py --model "$model name" --b "$batch size" --e "$Num of epoch" --loss "$Loss Function" --gpu "$GPUs"
-			# For Example: python3 train.py --model CFTNet --b 8 --e 50 --loss SISDR+FreqLoss --gpu '0 1'
-			# Simple Example: python3 train.py --model CFTNet
+			# For Example: python3 train.py --model DCCTN --b 8 --e 50 --loss SISDR+FreqLoss --gpu '0 1'
+			# Simple Example: python3 train.py --model DCCTN
 
 
 This will save a .ckpt file in the Saved_Models>$Model Name folder.
