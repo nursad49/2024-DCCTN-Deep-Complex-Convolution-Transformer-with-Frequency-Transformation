@@ -1,0 +1,116 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier-Oblique;}
+{\colortbl;\red255\green255\blue255;\red251\green2\blue7;\red253\green128\blue8;\red109\green109\blue109;
+\red0\green0\blue0;\red109\green109\blue109;\red0\green0\blue255;\red128\green0\blue128;\red15\green121\blue165;
+}
+{\*\expandedcolortbl;;\cssrgb\c100000\c14913\c0;\cssrgb\c100000\c57637\c0;\csgenericrgb\c42745\c42745\c42745;
+\cssrgb\c0\c0\c0;\csgenericrgb\c42745\c42745\c42745;\cssrgb\c1680\c19835\c100000;\cssrgb\c57919\c12801\c57269;\cssrgb\c0\c54942\c70689;
+}
+\margl1440\margr1440\vieww38060\viewh25100\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li9624\fi-159\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf2 \
+\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97********\'97\'97\'97\'97\'97\'97\'97\'97\'97-\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li9624\fi-159\pardirnatural\partightenfactor0
+\cf2 Speech Enhancement for Cochlear Implant Listeners\
+Author: Dr. Nursadul Mamun, Dr. John H.L. Hansen\
+Center of Robust Speech Systems-CI Lab\
+University of Texas at Dallas, USA\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97********\'97\'97\'97\'97\'97\'97\'97\'97\'97-
+\fs24 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li9624\fi-8895\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\i\fs36 \cf3 # ----------------------------------------------------------------------------\
+# Implementation of three networks (CFTNet, DCCTN, and DATCFTNet) for speech enhancement.\
+# *************************** Network-1: CFTNet *************************************\
+# Complex-valued Frequency Transformation Network for Speech Enhancement\
+# Authors: Nursadul Mamun, John H.L. Hansen \'93CFTNet: Complex-valued frequency transformation\
+# network for speech enhancement, INTERSPEECH, Dublin, Ireland, 2023.\
+\
+# *************************** Network-2: DCCTN *************************************\
+# Deep Complex Convolution Transformer Network for Speech Enhancement\
+# Authors: Nursadul Mamun, John H.L. Hansen \'93Speech Enhancement for Cochlear Implant using Deep Complex\
+# Convolution Transformer with Frequency Transformation, IEEE Transaction on Audio, Speech, and Language Processing, 2024.\
+\
+\
+# *************************** Network-2: DATCFTNet *************************************\
+# DAT-CFTNet: A Dual-Path Attention-based Complex-valued Frequency Transformation Network for Speech Enhancement\
+# Authors: Nursadul Mamun, John H.L. Hansen \'93DAT-CFTNet: A Dual-Path Attention-based Complex-valued Frequency\
+# Transformation Network for Speech Enhancement, ICASSP, Korea, 2024.\
+#------------------------------------------------------------------------------\cf4 \
+\
+\cf2 \ul \ulc2 The folder contains:\cf4 \ulnone \
+\
+\cf5 AudioDataGeneration.py : This generates the noisy audio samples for different SNRs for Train, Dev, and Test folder. It saves audio and noisy audio files in the 									  Database>Original_Samples>Train/Dev/Test folder. Change the name of the noise and SNRs in the function.\
+\
+Write_scp_files.py     : This generates the .scp files for Dataprep.py. Change the noise name as like AudioDataGenerator.py. \
+\
+Dataprep.py					: This splits all clean and noisy audio files into 4 second chunks and generates training samples to use to train the system. The generated files 									  are saved in Database>Training_Samples folder\
+\
+Network.py             : This file contains all proposed networks (CFTNet, DCCTN, and DATCFTNET). You can test each network by running this files seperately. \
+\
+Train.py               : This file contains all files related to train the model. This import training data from Database>Training_Samples folder and related model from 									 the Network.py file.\
+\
+Test.py						  : This evaluate the network by using the test samples from Database>Original_Samples>Test folder and generate the enhanced files in the same folder.\
+\
+\
+\ul Dependencies:\ulnone \
+\
+dataloader.py				: This helps the train.py function to load all training samples (train and Dev) from Database>Training_Samples folder.\
+\
+modules.py						: It contains all functions required to design the model.\
+\
+utils.py						: It contains all functions required for whole system.\
+\
+objective_metrics.py		: This contains all objective speech intelligibility and quality metrics, and loss functions.\cf4 \
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \ul \ulc6 How to Run:\cf6 \
+												\cf7 Part 1: If running for the first time or folders are not available for this database:\cf6 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1780\fi-1781\pardirnatural\partightenfactor0
+\cf8 \ulnone Step 1: Execute AudioDataGeneration.py to generate noisy samples corresponding to clean samples for different noise types and SNRs. Ensure you have clean files in Database>Original_Samples>Clean and noise in Database>Original_Samples>Different_Noise folder to generate rthe equired noisy files. Modify AudioDataGeneration.py according to your specifications for noisy samples and make necessary edits. \
+\pard\pardeftab720\partightenfactor0
+\cf8    		*If you already have noisy samples for corresponding clean samples, you can skip this step.*\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf8 \
+Step 2: Run `Write_scp_files.py` to generate `Train.scp`, `Dev.scp`, and `Test.scp` files. These files will be utilized in the `Dataprep.py` function to segment all training 			files.\
+\pard\pardeftab720\partightenfactor0
+\cf8    		*If you already have noisy samples for corresponding clean samples, you can skip this step.*\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf8 \
+Step 3: Execute `Dataprep.py` to segment audio files and create the `Database > Training_Samples` folder.\
+\pard\pardeftab720\partightenfactor0
+\cf8    		*If you already have these files, you can skip this step.*\cf6 \ul \ulc6 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf6 \
+											 \cf7 Part 2: \ulc7  Run these steps to train your model every time**\cf6 \ulc6 \
+\
+\
+\cf9 \
+\ulnone Step 4: To train the model run this function in the python terminal:-\
+\
+				python3 train.py --model "$model name" --b "$batch size" --e "$Num of epoch" --loss "$Loss Function" --gpu "$GPUs"\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf9 			# For Example: python3 train.py --model CFTNet --b 8 --e 50 --loss SISDR+FreqLoss --gpu '0 1'\
+			# Simple Example: python3 train.py --model CFTNet\
+\
+\
+This will saved a .ckpt file in Saved_Models>$Model Name folder.\
+			Repeat step 4 every time to run the desired model.\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf9 Step 5: To test the model run this function in the python terminal:-\
+\ul \ulc6 \
+\ulnone 			\'93python3 test.py\'94\
+\ul \
+Please change the model name, modelfile from the \'93\ulc9 Saved_Models>$Model Name\'94 folder in the main file of test.py before testin\cf6 \ulc6 g.\cf6 \ulc6 \
+\
+\
+}
