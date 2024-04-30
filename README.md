@@ -10,7 +10,7 @@ DCCTN network is four-fold. (1) propose a fully complex-valued deep complex conv
 
 
 
-![Fig-1- Basic block diagram of DCCTN with the complex frequency transformed module Model Overview](https://github.com/nursad49/2024-DCCTN-Deep-Complex-Convolution-Transformer-with-Frequency-Transformation/assets/45471274/2a6c2eee-253f-49e5-a376-03b520e2bb1b)
+						![Fig-1- Basic block diagram of DCCTN with the complex frequency transformed module Model Overview](https://github.com/nursad49/2024-DCCTN-Deep-Complex-Convolution-Transformer-with-Frequency-Transformation/assets/45471274/2a6c2eee-253f-49e5-a376-03b520e2bb1b)
 
 
 
