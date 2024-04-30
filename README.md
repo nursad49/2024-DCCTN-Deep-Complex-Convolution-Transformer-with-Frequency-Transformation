@@ -1,19 +1,11 @@
-# 2024-DCCTN-Deep-Complex-Convolution-Transformer-with-Frequency-Transformation
+# Speech Enhancement: 2024-DCCTN-Deep-Complex-Convolution-Transformer-with-Frequency-Transformation
 
 
-———————————********—————————-
-Speech Enhancement for Cochlear Implant Listeners
-Author: Dr. Nursadul Mamun, Dr. John H.L. Hansen
-Center of Robust Speech Systems-CI Lab
-University of Texas at Dallas, USA
-———————————********—————————-
-
-# -----------------------------------------------------
 # Implementation of three networks (CFTNet, DCCTN, and DATCFTNet) for speech enhancement.
 # ******************* Network-1: CFTNet ******************
-# Complex-valued Frequency Transformation Network for Speech Enhancement
-# Authors: Nursadul Mamun, John H.L. Hansen “CFTNet: Complex-valued frequency transformation
-# network for speech enhancement, INTERSPEECH, Dublin, Ireland, 2023.
+ Complex-valued Frequency Transformation Network for Speech Enhancement
+ Authors: Nursadul Mamun, John H.L. Hansen “CFTNet: Complex-valued frequency transformation
+ network for speech enhancement, INTERSPEECH, Dublin, Ireland, 2023.
 
 # ******************* Network-2: DCCTN *******************
 Deep Complex Convolution Transformer Network for Speech Enhancement
@@ -22,9 +14,9 @@ Convolution Transformer with Frequency Transformation, IEEE Transaction on Audio
 
 
 # ******************* Network-2: DATCFTNet ***************
-# DAT-CFTNet: A Dual-Path Attention-based Complex-valued Frequency Transformation Network for Speech Enhancement
-# Authors: Nursadul Mamun, John H.L. Hansen “DAT-CFTNet: A Dual-Path Attention-based Complex-valued Frequency
-# Transformation Network for Speech Enhancement, ICASSP, Korea, 2024.
+ DAT-CFTNet: A Dual-Path Attention-based Complex-valued Frequency Transformation Network for Speech Enhancement
+ Authors: Nursadul Mamun, John H.L. Hansen “DAT-CFTNet: A Dual-Path Attention-based Complex-valued Frequency
+ Transformation Network for Speech Enhancement, ICASSP, Korea, 2024.
 #-----------------------------------------------------------
 
 # Architecture
@@ -76,7 +68,7 @@ Step 2: Run `Write_scp_files.py` to generate `Train.scp`, `Dev.scp`, and `Test.s
 Step 3: Execute `Dataprep.py` to segment audio files and create the `Database > Training_Samples` folder.
    		*If you already have these files, you can skip this step.*
 
-# Part 2:  Run these steps to train your model every time**
+# Part 2:  Run these steps to train your model every time
 
 
 
