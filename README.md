@@ -26,7 +26,17 @@ University of Texas at Dallas, USA
 # Authors: Nursadul Mamun, John H.L. Hansen “DAT-CFTNet: A Dual-Path Attention-based Complex-valued Frequency
 # Transformation Network for Speech Enhancement, ICASSP, Korea, 2024.
 #------------------------------------------------------------------------------
-![Uploading Fig-1- Basic block diagram of DCCTN with the complex frequency transformed module Model Overview.jpg…]()
+
+
+
+![Fig-1- Basic block diagram of DCCTN with the complex frequency transformed module Model Overview](https://github.com/nursad49/2024-DCCTN-Deep-Complex-Convolution-Transformer-with-Frequency-Transformation/assets/45471274/2a6c2eee-253f-49e5-a376-03b520e2bb1b)
+
+
+
+
+
+
+
 
 The folder contains:
 
