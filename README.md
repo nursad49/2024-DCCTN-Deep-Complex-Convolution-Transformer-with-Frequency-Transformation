@@ -16,9 +16,9 @@ University of Texas at Dallas, USA
 # network for speech enhancement, INTERSPEECH, Dublin, Ireland, 2023.
 
 # ******************* Network-2: DCCTN *******************
-# Deep Complex Convolution Transformer Network for Speech Enhancement
-# Authors: Nursadul Mamun, John H.L. Hansen “Speech Enhancement for Cochlear Implant using Deep Complex
-# Convolution Transformer with Frequency Transformation, IEEE Transaction on Audio, Speech, and Language Processing, 2024.
+Deep Complex Convolution Transformer Network for Speech Enhancement
+Authors: Nursadul Mamun, John H.L. Hansen “Speech Enhancement for Cochlear Implant using Deep Complex
+Convolution Transformer with Frequency Transformation, IEEE Transaction on Audio, Speech, and Language Processing, 2024.
 
 
 # ******************* Network-2: DATCFTNet ***************
@@ -65,7 +65,7 @@ objective_metrics.py: This contains all objective speech intelligibility and qua
 
 How to Run:
 												
-	    # Part 1: If running for the first time or folders are not available for this database:
+# Part 1: If running for the first time or folders are not available for this database:
 
 Step 1: Execute AudioDataGeneration.py to generate noisy samples corresponding to clean samples for different noise types and SNRs. Ensure you have clean files in Database>Original_Samples>Clean and noise in Database>Original_Samples>Different_Noise folder to generate rthe equired noisy files. Modify AudioDataGeneration.py according to your specifications for noisy samples and make necessary edits. 
    		*If you already have noisy samples for corresponding clean samples, you can skip this step.*
@@ -76,7 +76,7 @@ Step 2: Run `Write_scp_files.py` to generate `Train.scp`, `Dev.scp`, and `Test.s
 Step 3: Execute `Dataprep.py` to segment audio files and create the `Database > Training_Samples` folder.
    		*If you already have these files, you can skip this step.*
 
-	    # Part 2:  Run these steps to train your model every time**
+# Part 2:  Run these steps to train your model every time**
 
 
 
