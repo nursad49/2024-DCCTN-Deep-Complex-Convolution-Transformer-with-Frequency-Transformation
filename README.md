@@ -65,7 +65,7 @@ objective_metrics.py: This contains all objective speech intelligibility and qua
 
 How to Run:
 												
-	    Part 1: If running for the first time or folders are not available for this database:
+	    ## Part 1: If running for the first time or folders are not available for this database:
 
 Step 1: Execute AudioDataGeneration.py to generate noisy samples corresponding to clean samples for different noise types and SNRs. Ensure you have clean files in Database>Original_Samples>Clean and noise in Database>Original_Samples>Different_Noise folder to generate rthe equired noisy files. Modify AudioDataGeneration.py according to your specifications for noisy samples and make necessary edits. 
    		*If you already have noisy samples for corresponding clean samples, you can skip this step.*
@@ -76,13 +76,13 @@ Step 2: Run `Write_scp_files.py` to generate `Train.scp`, `Dev.scp`, and `Test.s
 Step 3: Execute `Dataprep.py` to segment audio files and create the `Database > Training_Samples` folder.
    		*If you already have these files, you can skip this step.*
 
-	    Part 2:  Run these steps to train your model every time**
+	    ## Part 2:  Run these steps to train your model every time**
 
 
 
 Step 4: To train the model run this function in the Python terminal:-
 
-				python3 train.py --model "$model name" --b "$batch size" --e "$Num of epoch" --loss "$Loss Function" --gpu "$GPUs"
+			python3 train.py --model "$model name" --b "$batch size" --e "$Num of epoch" --loss "$Loss Function" --gpu "$GPUs"
 			# For Example: python3 train.py --model CFTNet --b 8 --e 50 --loss SISDR+FreqLoss --gpu '0 1'
 			# Simple Example: python3 train.py --model CFTNet
 
