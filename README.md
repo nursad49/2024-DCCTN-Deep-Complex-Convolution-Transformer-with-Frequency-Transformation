@@ -1,10 +1,9 @@
 # Speech Enhancement: 2024-DCCTN-Deep-Complex-Convolution-Transformer-with-Frequency-Transformation
 
-# ******************* Network-2: DCCTN *******************
+# ******************* DCCTN *******************
 Deep Complex Convolution Transformer Network for Speech Enhancement
 Authors: Nursadul Mamun, John H.L. Hansen “Speech Enhancement for Cochlear Implant using Deep Complex
 Convolution Transformer with Frequency Transformation, IEEE Transaction on Audio, Speech, and Language Processing, 2024.
-#-----------------------------------------------------------
 
 # Architecture
 DCCTN network is four-fold. (1) propose a fully complex-valued deep complex convolution transformer network, DCCTN, that uses a complex audio transformer and complex frequency transformation network (2) complex FTL in the encoder to leverage correlation among harmonics to capture global cor- relations over frequency for more effective T-F representations (3) a complex audio transformer within the bottleneck layer of the network. This transformer offers several advantages: the self-attention mechanism captures long-range relationships in speech by focusing on key input sequence features; its parallel processing capabilities outperform RNNs by enabling simultaneous use of multiple processing units for expedited computation [41]; it accurately captures both local and global contexts, and the multi-head attention mechanism improves
@@ -20,20 +19,20 @@ The folder contains:
 
 AudioDataGeneration.py: This generates the noisy audio samples for different SNRs for the Train, Dev, and Test folders. It saves audio and noisy audio files 			in the Database>Original_Samples>Train/Dev/Test folder. Change the name of the noise and SNRs in the function.
 
-Write_scp_files.py: This generates the .scp files for Dataprep.py. Change the noise name as like AudioDataGenerator.py. 
+Write_scp_files.py: This generates the .scp files for Dataprep.py. Change the noise name to AudioDataGenerator.py. 
 
 Dataprep.py: This splits all clean and noisy audio files into 4-second chunks and generates training samples to use to train the system. The generated files 	    are saved in the Database>Training_Samples folder
 
-Network.py: This file contains all proposed networks (CFTNet, DCCTN, and DATCFTNET). You can test each network by running this files seperately. 
+Network.py: This file contains all proposed networks (CFTNet, DCCTN, and DATCFTNET). You can test each network by running these files separately. 
 
-Train.py: This file contains all files related to train the model. This import training data from Database>Training_Samples folder and related model from the 	Network.py file.
+Train.py: This file contains all files related to training the model. This imports training data from the Database>Training_Samples folder and related model from the 	Network.py file.
 
 Test.py: This evaluates the network by using the test samples from Database>Original_Samples>Test folder and generate the enhanced files in the same folder.
 
 
 Dependencies:
 
-dataloader.py: This helps the train.py function to load all training samples (train and Dev) from Database>Training_Samples folder.
+dataloader.py: This helps the train.py function to load all training samples (train and Dev) from the Database>Training_Samples folder.
 
 modules.py: It contains all the functions required to design the model.
 
@@ -46,7 +45,7 @@ How to Run:
 												
 # Part 1: If running for the first time or folders are not available for this database:
 
-Step 1: Execute AudioDataGeneration.py to generate noisy samples corresponding to clean samples for different noise types and SNRs. Ensure you have clean files in Database>Original_Samples>Clean and noise in Database>Original_Samples>Different_Noise folder to generate rthe equired noisy files. Modify AudioDataGeneration.py according to your specifications for noisy samples and make necessary edits. 
+Step 1: Execute AudioDataGeneration.py to generate noisy samples corresponding to clean samples for different noise types and SNRs. Ensure you have clean files in Database>Original_Samples>Clean and noise in Database>Original_Samples>Different_Noise folder to generate the required noisy files. Modify AudioDataGeneration.py according to your specifications for noisy samples and make necessary edits. 
    		*If you already have noisy samples for corresponding clean samples, you can skip this step.*
 
 Step 2: Run `Write_scp_files.py` to generate `Train.scp`, `Dev.scp`, and `Test.scp` files. These files will be utilized in the `Dataprep.py` function to segment all training files.
