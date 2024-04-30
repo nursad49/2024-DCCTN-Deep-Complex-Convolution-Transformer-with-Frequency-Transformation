@@ -27,6 +27,9 @@ University of Texas at Dallas, USA
 # Transformation Network for Speech Enhancement, ICASSP, Korea, 2024.
 #------------------------------------------------------------------------------
 
+# Architecture
+DCCTN network is four-fold. (1) propose a fully complex-valued deep complex convolution transformer network, DCCTN, that uses a complex audio transformer and complex frequency transformation network (2) complex FTL in the encoder to leverage correlation among harmonics to capture global cor- relations over frequency for more effective T-F representations (3) a complex audio transformer within the bottleneck layer of the network. This transformer offers several advantages: the self-attention mechanism captures long-range relationships in speech by focusing on key input sequence features; its parallel processing capabilities outperform RNNs by enabling simultaneous use of multiple processing units for expedited computation [41]; accurately captures both local and global contexts, and the multi-head attention mechanism improves
+
 
 
 ![Fig-1- Basic block diagram of DCCTN with the complex frequency transformed module Model Overview](https://github.com/nursad49/2024-DCCTN-Deep-Complex-Convolution-Transformer-with-Frequency-Transformation/assets/45471274/2a6c2eee-253f-49e5-a376-03b520e2bb1b)
